@@ -16,5 +16,6 @@ import javax.ejb.Remote;
 public interface AuthenticationController {
     
     boolean login(String username, String password);
+    boolean logout(String acctID);
     
 }

@@ -7,8 +7,11 @@ package uk.ac.city.angelsoftworks18.bapersmain.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.DependsOn;
+import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccount;
+import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccounts;
 
 /**
  *
@@ -16,24 +19,54 @@ import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccount;
  */
 
 @Singleton
+@DependsOn("UserAccounts")
 public class UserControllerImpl implements UserController {
+    
+    @EJB
+    UserAccounts users;
 
     // Stub
     @Override
     public UserAccount findUserByName(String username) {
-        return new UserAccount("d145", username, "Password4", "Shift Manager");
+        for(UserAccount user : users.getAccounts()){
+            if(user.getUsername().compareTo(username) == 0){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    // Stub
+    @Override
+    public UserAccount findUserByID(String acctID) {
+        for(UserAccount user : users.getAccounts()){
+            if(user.getAcctID().compareTo(acctID) == 0){
+                return user;
+            }
+        }
+        return null;
     }
 
     
     // Stub
     @Override
     public List<UserAccount> findAllUsers() {
-        ArrayList<UserAccount> users = new ArrayList<>();
-        users.add(new UserAccount("a123", "Bob", "Password1", "Office Manager"));
-        users.add(new UserAccount("b321", "Bill", "Password2", "Receptionist"));
-        users.add(new UserAccount("c231", "Tech", "Password3", "Technician"));
-        
-        return users;
+        return users.getAccounts();
+    }
+
+    @Override
+    public boolean createUser(String acctID, String username, String password, String role) {
+        return false;
+    }
+
+    @Override
+    public boolean updateRole(String acctID, String newRole) {
+        UserAccount user = findUserByID(acctID);
+        if(user != null){
+            user.setRole(newRole);
+            return true;
+        }
+        return false;
     }
     
 }

@@ -18,6 +18,9 @@ import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccount;
 public interface UserController {
     
     UserAccount findUserByName(String username);
+    UserAccount findUserByID(String acctID);
     List<UserAccount> findAllUsers();
+    boolean createUser(String acctID, String username, String password, String role);
+    boolean updateRole(String acctID, String newRole);
     
 }

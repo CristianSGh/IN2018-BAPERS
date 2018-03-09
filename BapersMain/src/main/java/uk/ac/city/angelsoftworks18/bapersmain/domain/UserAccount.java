@@ -16,12 +16,16 @@ public class UserAccount {
     private String username;
     private String password;
     private String role;
+    
+    private boolean loggedIn;
 
     public UserAccount(String acctID, String username, String password, String role) {
         this.acctID = acctID;
         this.username = username;
         this.password = password;
         this.role = role;
+        
+        loggedIn = false;
     }
 
     public String getAcctID() {
@@ -57,5 +61,11 @@ public class UserAccount {
     }
     
     
+    public boolean isLoggedIn(){
+        return loggedIn;
+    }
     
+    public void setLoggedIn(boolean p){
+        loggedIn = p;
+    }
 }

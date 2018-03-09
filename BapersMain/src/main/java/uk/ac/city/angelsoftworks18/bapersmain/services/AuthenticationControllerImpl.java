@@ -5,8 +5,11 @@
  */
 package uk.ac.city.angelsoftworks18.bapersmain.services;
 
+import javax.ejb.DependsOn;
+import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccount;
+import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccounts;
 
 /**
  *
@@ -14,14 +17,31 @@ import uk.ac.city.angelsoftworks18.bapersmain.domain.UserAccount;
  */
 
 @Singleton
+@DependsOn("UserControllerImpl")
 public class AuthenticationControllerImpl implements AuthenticationController {
 
+    @EJB
+    UserController controller;
+    
+    
+    
     // Stub
     @Override
     public boolean login(String username, String password) {
-        UserAccount user = new UserAccount("a123", "User1", "password1", "Office Manager");
-        
-        return (username.compareTo(user.getUsername()) == 0) && (password.compareTo(user.getPassword()) == 0);
+        UserAccount user = controller.findUserByName(username);
+        if(user.getPassword().compareTo(password) == 0){
+            user.setLoggedIn(true);
+            return user.isLoggedIn();
+        }
+        return false;
+    }
+    
+    // Stub
+    @Override
+    public boolean logout(String acctID) {
+        UserAccount user = controller.findUserByID(acctID);
+        user.setLoggedIn(false);
+        return user.isLoggedIn();
     }
     
 }
