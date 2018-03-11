@@ -23,18 +23,14 @@ public class Main {
             Context jndi = new InitialContext();
             AuthenticationController auth = (AuthenticationController) jndi.lookup("java:global/Bapers/AuthenticationControllerImpl");
             //UserController contr = (UserController) jndi.lookup("java:global/Bapers/UserControllerImpl");
-            if(auth.login("Bob", "Password1")){
+            
+            String sessionToken = auth.login("Bob", "Password1");
+            if(sessionToken != null){
                 System.out.println("Logged in.");
-                
             } else {
-                System.out.println("Login failed");
+                System.out.println("Login failed.");
             }
             
-            if(auth.logout("a123")){
-                System.out.println("Logged out.");
-            } else {
-                System.out.println("Logout failed.");
-            }
         } catch (NamingException ex) {
             System.out.println(ex);
         }

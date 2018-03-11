@@ -17,7 +17,7 @@ import javax.ejb.Singleton;
 @Singleton
 public class UserAccounts {
     
-   private ArrayList<UserAccount> accounts;
+    private ArrayList<UserAccount> accounts;
     
     
 

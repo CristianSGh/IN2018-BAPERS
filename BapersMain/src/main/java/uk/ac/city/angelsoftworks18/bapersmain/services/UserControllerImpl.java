@@ -56,7 +56,8 @@ public class UserControllerImpl implements UserController {
 
     @Override
     public boolean createUser(String acctID, String username, String password, String role) {
-        return false;
+        users.getAccounts().add(new UserAccount(acctID, username, password, role));
+        return true;
     }
 
     @Override

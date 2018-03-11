@@ -27,19 +27,21 @@ public class AuthenticationControllerImpl implements AuthenticationController {
     
     // Stub
     @Override
-    public boolean login(String username, String password) {
+    public String login(String username, String password) {
         UserAccount user = controller.findUserByName(username);
         if(user.getPassword().compareTo(password) == 0){
             user.setLoggedIn(true);
-            return user.isLoggedIn();
+            return user.getAcctID();
         }
-        return false;
+        return null;
     }
+
+    
     
     // Stub
     @Override
-    public boolean logout(String acctID) {
-        UserAccount user = controller.findUserByID(acctID);
+    public boolean logout(String sessionToken) {
+        UserAccount user = controller.findUserByID(sessionToken);
         user.setLoggedIn(false);
         return user.isLoggedIn();
     }
