@@ -31,6 +31,18 @@ public class Main {
                 System.out.println("Login failed.");
             }
             
+            System.out.println("...");
+            //for(int i = 0; i < contr.findAllUsers().size(); ++i){
+                //System.out.println(contr.findAllUsers().get(i).getUsername());
+            //}
+            System.out.println("...");
+            
+            if(auth.logout(sessionToken)){
+                System.out.println("Logged out.");
+            } else {
+                System.out.println("Logout failed.");
+            }
+            
         } catch (NamingException ex) {
             System.out.println(ex);
         }

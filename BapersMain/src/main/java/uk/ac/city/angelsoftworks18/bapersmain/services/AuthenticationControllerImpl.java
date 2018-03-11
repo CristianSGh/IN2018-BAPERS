@@ -43,7 +43,10 @@ public class AuthenticationControllerImpl implements AuthenticationController {
     public boolean logout(String sessionToken) {
         UserAccount user = controller.findUserByID(sessionToken);
         user.setLoggedIn(false);
-        return user.isLoggedIn();
+        if(user.isLoggedIn() == false){
+            return true;
+        }
+        return false;
     }
     
 }
