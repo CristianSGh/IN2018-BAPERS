@@ -676,13 +676,14 @@ public class MainWindow extends MyJFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
                         .addComponent(jButton19)
                         .addGap(7, 7, 7)
                         .addComponent(jCheckBox4))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
@@ -698,6 +699,11 @@ public class MainWindow extends MyJFrame {
         );
 
         jButton15.setText("Print");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout shiftManagerPanelLayout = new javax.swing.GroupLayout(shiftManagerPanel);
         shiftManagerPanel.setLayout(shiftManagerPanelLayout);
@@ -765,6 +771,11 @@ public class MainWindow extends MyJFrame {
         jLabel17.setText("Database");
 
         jButton16.setText("Add Task");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1030,6 +1041,11 @@ public class MainWindow extends MyJFrame {
         menuPanel.addTab("Office Manager", officeManagerPanel);
 
         logoutButton.setText("Logout");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1073,7 +1089,8 @@ public class MainWindow extends MyJFrame {
     }//GEN-LAST:event_backupDataActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
+     JCheckBox jCheckBox2 = new JCheckBox("Individual Performance Report");
+    jCheckBox2.setSelected(true);
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
@@ -1081,7 +1098,8 @@ public class MainWindow extends MyJFrame {
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
+    JCheckBox jCheckBox3 = new JCheckBox("Individual Report Printing");
+    jCheckBox3.setSelected(true);
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -1093,7 +1111,8 @@ public class MainWindow extends MyJFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
+     JCheckBox jCheckBox4 = new JCheckBox("Summary Performance Report Printing");
+    jCheckBox4.setSelected(true);
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -1127,6 +1146,26 @@ public class MainWindow extends MyJFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
     new SuspendAccountConfirmPopup().setVisible(true);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+     new NewTaskForm().setVisible(true);
+     
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    if(!jCheckBox4.isSelected()&&!jCheckBox3.isSelected()&&!jCheckBox4.isSelected()){
+        new NoPrintingTargetPopup().setVisible(true);
+    }
+    else if(jCheckBox4.isSelected()||jCheckBox3.isSelected()||jCheckBox4.isSelected()){
+        new PrintingTargetFoundPopup().setVisible(true);
+      
+    }
+    
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+      new LogOutConfirmPopup().setVisible(true);
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -22,7 +22,7 @@ public class BapersGUI {
         JFrame main = new MainWindow();
         main.setLocationRelativeTo(null);
         main.setVisible(true);
-        JOptionPane.showMessageDialog(main, "Hello.");
+     //   JOptionPane.showMessageDialog(main, "Hello.");
     }
     
 }
