@@ -6,11 +6,14 @@
 package uk.ac.city.angelsoftworks18.bapersmain.domain;
 
 import java.util.ArrayList;
+import javax.ejb.Singleton;
 
 /**
  *
  * @author cris
  */
+
+@Singleton
 public class CustomerAccounts {
     
     private ArrayList<CustomerAccount> customers;

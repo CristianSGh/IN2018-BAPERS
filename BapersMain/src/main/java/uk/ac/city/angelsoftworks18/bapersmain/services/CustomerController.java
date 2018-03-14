@@ -6,12 +6,15 @@
 package uk.ac.city.angelsoftworks18.bapersmain.services;
 
 import java.util.List;
+import javax.ejb.Remote;
 import uk.ac.city.angelsoftworks18.bapersmain.domain.CustomerAccount;
 
 /**
  *
  * @author cris
  */
+
+@Remote
 public interface CustomerController {
     
     List<CustomerAccount> findAllCustomers();

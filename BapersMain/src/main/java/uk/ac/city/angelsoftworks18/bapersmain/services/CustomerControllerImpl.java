@@ -6,32 +6,53 @@
 package uk.ac.city.angelsoftworks18.bapersmain.services;
 
 import java.util.List;
+import javax.ejb.DependsOn;
+import javax.ejb.EJB;
+import javax.ejb.Singleton;
 import uk.ac.city.angelsoftworks18.bapersmain.domain.CustomerAccount;
+import uk.ac.city.angelsoftworks18.bapersmain.domain.CustomerAccounts;
 
 /**
  *
  * @author cris
  */
+
+@Singleton
+@DependsOn("CustomerAccounts")
 public class CustomerControllerImpl implements CustomerController{
 
+    @EJB
+    CustomerAccounts accounts;
+    
     @Override
     public List<CustomerAccount> findAllCustomers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return accounts.getCustomers();
     }
 
     @Override
     public CustomerAccount findCustomerByID(String acctID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(CustomerAccount account : accounts.getCustomers()){
+            if(account.getAcctID().compareToIgnoreCase(acctID) == 0){
+                return account;
+            }
+        }
+        return null;
     }
 
     @Override
     public CustomerAccount findCustomerByName(String acctName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(CustomerAccount account : accounts.getCustomers()){
+            if(account.getAcctName().compareToIgnoreCase(acctName) == 0){
+                return account;
+            }
+        }
+        return null;
     }
 
     @Override
     public boolean createCustomerAccount(String acctID, String acctName, String contactName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        accounts.getCustomers().add(new CustomerAccount(acctID, acctName, contactName));
+        return true;
     }
     
 }
