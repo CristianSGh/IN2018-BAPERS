@@ -97,14 +97,21 @@ public class AuthenticationForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+ // if login credentials valid, else login failure
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        if(){
         JFrame window = new MainWindow();
         this.setVisible(false);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
         System.out.println("logged in");
         this.setEnabled(false);
+        } else{
+        JFrame logInFailureWindow = new LogInFailurePopup();
+        logInFailureWindow.setVisible(true);   
+        
+     
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**

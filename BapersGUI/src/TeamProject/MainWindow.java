@@ -958,6 +958,11 @@ public class MainWindow extends MyJFrame {
         jButton14.setText("Print letter");
 
         jButton9.setText("In Default List");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jLabel27.setText("Reminder");
 
@@ -1166,6 +1171,11 @@ public class MainWindow extends MyJFrame {
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
       new LogOutConfirmPopup().setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        new InDefaultList().setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
