@@ -109,8 +109,6 @@ public class AuthenticationForm extends javax.swing.JFrame {
         } else{
         JFrame logInFailureWindow = new LogInFailurePopup();
         logInFailureWindow.setVisible(true);   
-        
-     
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 

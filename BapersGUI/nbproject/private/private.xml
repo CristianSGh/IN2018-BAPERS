@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/CustomerIDExistsPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/TaskAddedSuccessPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/InvalidUsernamePopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/InvoiceForm.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/JobIDExistsPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/CustomerCreatedSuccessPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/TaskIDExistsPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/InvalidIDPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/AccountIDExistsPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/InvalidJobIDPopup.java</file>
-            <file>file:/home/null/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/JobCreatedSuccessPopup.java</file>
-=======
-            <file>file:/C:/Users/Kane/Documents/GitHub/IN2018-BAPERS/BapersGUI/src/TeamProject/MainWindow.java</file>
->>>>>>> 5244c56293e0507ab3003cdf71ff08ef2348a398
-        </group>
+        <group/>
     </open-files>
 </project-private>
