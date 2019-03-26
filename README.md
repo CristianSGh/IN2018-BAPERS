@@ -7,9 +7,9 @@
 
 Team members:
 
-* Ahmed Abukar
-* Karan Dixit
-* Cristian Ghita
-* Kane Dharan
-* David Madaleno
-* Aimal Hederzada
+* Ahmed A.
+* Karan D.
+* Cristian G.
+* Kane D.
+* David M.
+* Aimal H.
